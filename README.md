@@ -1,18 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+#superativo
+
+O propósito principal do app é aumentar o engajamento dos alunos com as aulas, incorporando a gamificação como uma forma de incentivá-los a serem mais competitivos nas atividades de educação física, tanto nos esportes individuais quanto nos coletivos. Para isso, usaremos rankings das equipes formadas em aula e, a depender do número de vitórias, os alunos que mais estiveram em times vitoriosos, irão aparecer em rankings individuais da própria turma e também do colégio.
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -34,3 +28,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+```bash
+npm run dev
+```
+```bash
+yarn dev
+```
+pnpm dev
+```bash
+bun dev
+```
