@@ -23,19 +23,89 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🔗 APIs Utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ViaCEP](https://viacep.com.br) – Para buscar endereços a partir do CEP digitado  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
 
+## 🛠️ Tecnologias
+
+Tecnologias utilizadas / Technologies Used
+Next.js – framework React com renderização do lado servidor e geração de páginas estáticas
+React – biblioteca de componentes para a interface
+JavaScript (ES6+) – linguagem principal do projeto
+Node.js – ambiente de execução do servidor
+API Routes do Next.js – para rotas de backend dentro do projeto
+Prisma – ORM para conexão com banco de dados
+PostgreSQL (aparentemente, pelo Prisma) – banco de dados relacional
+bcrypt – para hash de senhas
+jsonwebtoken (JWT) – autenticação baseada em tokens
+CSS / globals.css – estilização básica do projeto
+.env – variáveis de ambiente para segredos e conexões
+GitHub – versionamento de código
+Vercel – plataforma de deploy
+---
+
+## 📂 Estrutura do Projeto
+
+bash
+superativo/             # raiz do projeto
+├─ .next/               # build do Next.js
+├─ lib/
+│  └─ database.js       # funções para manipulação do banco de dados
+├─ node_modules/        # dependências do projeto
+├─ prisma/
+│  └─ schema.prisma     # schema do banco de dados (Prisma ORM)
+├─ public/              # arquivos públicos (imagens, favicon, etc.)
+├─ src/
+│  └─ app/
+│     ├─ api/
+│     │  └─ auth/
+│     │     ├─ cadastro/
+│     │     │  └─ route.js   # rota de cadastro (API)
+│     │     └─ login/
+│     │        └─ route.js   # rota de login (API)
+│     ├─ homescreen/
+│     │  └─ page.js           # tela inicial
+│     ├─ perfil/
+│     │  └─ page.js           # perfil do usuário
+│     ├─ rankingGeral/
+│     │  └─ historico&progresso/
+│     │     └─ page.js        # histórico e progresso no ranking
+│     │  └─ page.js           # ranking geral
+│     └─ turma/
+│        └─ page.js           # página da turma
+├─ .env                  # variáveis de ambiente
+├─ globals.css           # estilos globais
+├─ layout.js             # layout principal
+├─ favicon.ico
+└─ package.json
+
+🚀 Como rodar o projeto
+
+# 1. Clone o repositório
 ```bash
-npm run dev
+git clone 
 ```
+# 2. Acesse a pasta do projeto
+```bash
+cd superativo
+```
+# 3. Instale as dependências
+```bash
+npm install
+```
+# ou
+```bash
+yarn install
+```
+# 4. Inicie o servidor de desenvolvimento
 ```bash
 yarn dev
 ```
-pnpm dev
+# 5. Link do projeto na Vercel
 ```bash
-bun dev
+https://vercel.com/danilo-rochas-projects-722f0f9f/superativo
 ```
+
