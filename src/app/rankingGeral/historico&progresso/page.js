@@ -91,7 +91,7 @@ const HistoricoScreen = () => {
       {/* Header */}
       <div className="relative bg-gradient-to-r from-orange-400 to-orange-500 text-gray-300 p-6">
         {/* Logo Superativo2 Centralizada */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-4 h-20 w-40 z-0 drop-shadow-[0_10px_5px_rgba(0,123,255,0.8)]">
+        <div className="absolute left-1/2 -translate-x-1/2 top-7 h-20 w-40 z-0 drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]">
           <Image
             src="/logo-superativo2.png"
             alt="Logo Superativo2"

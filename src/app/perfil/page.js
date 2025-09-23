@@ -50,13 +50,13 @@ const PerfilScreen = () => {
         </div>
 
         {/* Logo centralizada */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-4 h-20 w-40 z-0">
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 h- w- z-0">
           <Image
             src="/logo-superativo2.png"
             alt="Logo Super Ativo"
             width={256}
             height={80}
-            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]"
+            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(0,123,255,0.8)]"
           />
         </div>
 
