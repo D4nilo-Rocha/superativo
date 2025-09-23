@@ -1,16 +1,17 @@
 'use client'
 
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Play, TrendingUp, Calendar, BookOpen, Trophy, Users, Bell } from 'lucide-react';
 
 const HomeScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-b-3xl shadow-lg">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-b-3xl shadow-lg relative">
+        <div className="flex items-center justify-between mb-4 relative z-10">
+          {/* Foto + texto */}
           <div className="flex items-center gap-3">
-            {/* Foto do usuário */}
             <div className="w-10 h-10 rounded-full overflow-hidden">
               <img 
                 src="/Danilo-foto.jpg" 
@@ -20,13 +21,26 @@ const HomeScreen = () => {
             </div>
             <h1 className="text-xl font-semibold">Bem-vindo!</h1>
           </div>
+
+          {/* Sino */}
           <div className="relative">
             <Bell size={24} className="text-white/80" />
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-400 rounded-full"></div>
           </div>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-6">
+        {/* Logo centralizada */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1 h-20 w-40 z-0">
+          <Image
+            src="/logo-superativo2.png"
+            alt="Logo Super Ativo"
+            width={256}
+            height={80}
+            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]"
+          />
+        </div>
+
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-6 relative z-10">
           <h2 className="text-lg font-medium mb-2">Últimos rankings</h2>
           <p className="text-blue-100 text-sm mb-4">Precisa estar logado</p>
           <div className="flex justify-between items-center">

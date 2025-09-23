@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // ✅ Import necessário
+import Image from 'next/image';
 import { BarChart3, FileText, Clapperboard } from 'lucide-react';
 
 const LandingPage = () => {
@@ -21,14 +21,14 @@ const LandingPage = () => {
 
       {/* Main Hero Section */}
       <div className="flex flex-col items-center justify-center text-center px-6 py-16 relative">
-        {/* Background Logo */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        {/* Central Logo */}
+        <div className="absolute left-1/2 -translate-x-1/2 -top-17 h-20 w-40 z-0 ">
           <Image
-            src="/logo-superativo.jpg" // Coloque a imagem na pasta public
+            src="/logo-superativo2.png" // Coloque a imagem na pasta public
             alt="Logo Super Ativo"
-            width={400}               // ajuste conforme desejar
-            height={400}              // ajuste conforme desejar
-            className="object-contain"
+            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]"
+            width={256}   // largura real, não afeta object-fill
+            height={80}   // altura real, não afeta object-fill
           />
         </div>
 

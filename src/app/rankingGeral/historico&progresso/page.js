@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, Trophy, TrendingUp, BookOpen, Users, Calendar, Target, ChevronRight, Award, Zap, Activity, Clock, BarChart3 } from 'lucide-react';
+import Image from 'next/image';
 
 const HistoricoScreen = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('ultimo_mes');
@@ -88,15 +89,25 @@ const HistoricoScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-orange-400 to-orange-500 text-gray-300 p-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="relative bg-gradient-to-r from-orange-400 to-orange-500 text-gray-300 p-6">
+        {/* Logo Superativo2 Centralizada */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 h-20 w-40 z-0 drop-shadow-[0_10px_5px_rgba(0,123,255,0.8)]">
+          <Image
+            src="/logo-superativo2.png"
+            alt="Logo Superativo2"
+            width={256}
+            height={80}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="flex items-center justify-between mb-4 relative z-10">
           <div className="flex items-center gap-3">
             <ArrowLeft size={24} className="cursor-pointer" onClick={() => window.history.back()} />
             <h1 className="text-xl font-semibold">Histórico & Progresso</h1>
           </div>
           <div className="flex flex-col items-center gap-1 cursor-pointer">
             <div className="w-10 h-10 rounded-full overflow-hidden bg-white/20 hover:bg-white/30 transition-colors">
-              {/* Foto Liana no lugar do ícone User */}
               <img
                 src="/Liana-foto.png"
                 alt="Foto de Liana"
@@ -106,7 +117,7 @@ const HistoricoScreen = () => {
             <span className="text-xs text-blue-100 font-medium">Liana</span>
           </div>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative z-10">
           <p className="text-gray-300">Acompanhe sua evolução e metas</p>
           <button 
             onClick={() => window.location.href = '/'}
@@ -118,7 +129,6 @@ const HistoricoScreen = () => {
       </div>
 
       <div className="p-6 space-y-6">
-        
         {/* Resumo Atual */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
@@ -181,7 +191,6 @@ const HistoricoScreen = () => {
         {/* Gráfico Simples */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Evolução dos Pontos</h3>
-          
           <div className="relative h-40 mb-4">
             <div className="flex items-end justify-between h-full border-l-2 border-b-2 border-gray-200 px-2">
               {dados.map((item, index) => {
@@ -192,7 +201,6 @@ const HistoricoScreen = () => {
                   saude: 'bg-green-500',
                   presenca: 'bg-orange-500'
                 };
-                
                 return (
                   <div key={index} className="flex flex-col items-center flex-1">
                     <div 
@@ -207,7 +215,6 @@ const HistoricoScreen = () => {
               })}
             </div>
           </div>
-          
           <div className="text-center">
             <span className="text-sm text-gray-600">
               Maior valor: <span className="font-semibold">{maxValue}</span> pontos
@@ -322,7 +329,6 @@ const HistoricoScreen = () => {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Bottom Navigation */}

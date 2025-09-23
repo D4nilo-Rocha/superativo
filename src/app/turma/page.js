@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowLeft, User, Calendar, ChevronLeft, ChevronRight, TrendingUp, BookOpen, Trophy, Users, Edit2 } from 'lucide-react';
 
 const TurmaScreen = () => {
@@ -64,8 +65,19 @@ const TurmaScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
-        <div className="flex items-center justify-between mb-6">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 relative">
+        {/* Logo centralizada */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 h-20 w-40 z-0">
+          <Image
+            src="/logo-superativo2.png"
+            alt="Logo Super Ativo"
+            width={256}
+            height={80}
+            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]"
+          />
+        </div>
+
+        <div className="flex items-center justify-between mb-6 relative z-10">
           <div className="flex items-center gap-3">
             <h1 className="text-xl font-semibold">Minha Turma - Aluno</h1>
           </div>
@@ -78,7 +90,7 @@ const TurmaScreen = () => {
         </div>
         
         {/* Profile Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative z-10">
           <div className="w-16 h-16 rounded-full overflow-hidden">
             <img 
               src="/Aiimé-foto.jpg" 

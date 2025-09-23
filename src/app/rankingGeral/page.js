@@ -1,155 +1,58 @@
 'use client'
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowLeft, Trophy, Medal, Crown, TrendingUp, BookOpen, Users, Filter, Calendar, Target, User, BarChart3, ChevronRight } from 'lucide-react';
 
 const RankingScreen = () => {
   const [filterType, setFilterType] = useState('geral');
   const [timePeriod, setTimePeriod] = useState('bimestre');
 
-  // Dados mock dos rankings
   const rankingData = [
-    {
-      id: 1,
-      nome: 'Liana',
-      turma: '9º A',
-      pontos: {
-        total: 2850,
-        aula: 1500,
-        saude: 800,
-        presenca: 550
-      },
-      posicao: 1,
-      avatar: '👦',
-      nivel: 'Ouro'
-    },
-    {
-      id: 2,
-      nome: 'Aiimé Mariana',
-      turma: '8º B',
-      pontos: {
-        total: 2720,
-        aula: 1400,
-        saude: 920,
-        presenca: 400
-      },
-      posicao: 2,
-      avatar: '👧',
-      nivel: 'Ouro'
-    },
-    {
-      id: 3,
-      nome: 'Renata Akemi',
-      turma: '9º A',
-      pontos: {
-        total: 2650,
-        aula: 1350,
-        saude: 750,
-        presenca: 550
-      },
-      posicao: 3,
-      avatar: '👦',
-      nivel: 'Prata'
-    },
-    {
-      id: 4,
-      nome: 'Ana Oliveira',
-      turma: '7º C',
-      pontos: {
-        total: 2480,
-        aula: 1200,
-        saude: 880,
-        presenca: 400
-      },
-      posicao: 4,
-      avatar: '👧',
-      nivel: 'Prata'
-    },
-    {
-      id: 5,
-      nome: 'Carlos Lima',
-      turma: '8º A',
-      pontos: {
-        total: 2350,
-        aula: 1100,
-        saude: 700,
-        presenca: 550
-      },
-      posicao: 5,
-      avatar: '👦',
-      nivel: 'Bronze'
-    },
-    {
-      id: 6,
-      nome: 'Lucia Ferreira',
-      turma: '9º B',
-      pontos: {
-        total: 2280,
-        aula: 1050,
-        saude: 830,
-        presenca: 400
-      },
-      posicao: 6,
-      avatar: '👧',
-      nivel: 'Bronze'
-    },
-    {
-      id: 7,
-      nome: 'Rafael Souza',
-      turma: '8º C',
-      pontos: {
-        total: 2180,
-        aula: 950,
-        saude: 730,
-        presenca: 500
-      },
-      posicao: 7,
-      avatar: '👦',
-      nivel: 'Bronze'
-    }
+    { id: 1, nome: 'Liana', turma: '9º A', pontos: { total: 2850, aula: 1500, saude: 800, presenca: 550 }, posicao: 1, avatar: '👦', nivel: 'Ouro' },
+    { id: 2, nome: 'Aiimé Mariana', turma: '8º B', pontos: { total: 2720, aula: 1400, saude: 920, presenca: 400 }, posicao: 2, avatar: '👧', nivel: 'Ouro' },
+    { id: 3, nome: 'Renata Akemi', turma: '9º A', pontos: { total: 2650, aula: 1350, saude: 750, presenca: 550 }, posicao: 3, avatar: '👦', nivel: 'Prata' },
+    { id: 4, nome: 'Ana Oliveira', turma: '7º C', pontos: { total: 2480, aula: 1200, saude: 880, presenca: 400 }, posicao: 4, avatar: '👧', nivel: 'Prata' },
+    { id: 5, nome: 'Carlos Lima', turma: '8º A', pontos: { total: 2350, aula: 1100, saude: 700, presenca: 550 }, posicao: 5, avatar: '👦', nivel: 'Bronze' },
+    { id: 6, nome: 'Lucia Ferreira', turma: '9º B', pontos: { total: 2280, aula: 1050, saude: 830, presenca: 400 }, posicao: 6, avatar: '👧', nivel: 'Bronze' },
+    { id: 7, nome: 'Rafael Souza', turma: '8º C', pontos: { total: 2180, aula: 950, saude: 730, presenca: 500 }, posicao: 7, avatar: '👦', nivel: 'Bronze' }
   ];
 
   const getPodiumIcon = (posicao) => {
     switch (posicao) {
-      case 1:
-        return <Crown size={24} className="text-yellow-500" />;
-      case 2:
-        return <Medal size={24} className="text-gray-400" />;
-      case 3:
-        return <Trophy size={24} className="text-orange-600" />;
-      default:
-        return <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">{posicao}</div>;
+      case 1: return <Crown size={24} className="text-yellow-500" />;
+      case 2: return <Medal size={24} className="text-gray-400" />;
+      case 3: return <Trophy size={24} className="text-orange-600" />;
+      default: return <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">{posicao}</div>;
     }
   };
 
   const getNivelColor = (nivel) => {
     switch (nivel) {
-      case 'Ouro':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'Prata':
-        return 'bg-gray-100 text-gray-800';
-      case 'Bronze':
-        return 'bg-orange-100 text-orange-800';
-      default:
-        return 'bg-blue-100 text-blue-800';
+      case 'Ouro': return 'bg-yellow-100 text-yellow-800';
+      case 'Prata': return 'bg-gray-100 text-gray-800';
+      case 'Bronze': return 'bg-orange-100 text-orange-800';
+      default: return 'bg-blue-100 text-blue-800';
     }
   };
 
   const filteredData = rankingData.filter(item => {
     if (filterType === 'geral') return true;
-    if (filterType === 'turma') return item.turma === '9º A'; // Exemplo
+    if (filterType === 'turma') return item.turma === '9º A';
     return true;
   });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 relative rounded-b-3xl shadow-lg">
+        <div className="flex items-center justify-between mb-4 relative z-10">
+          {/* Título */}
           <div className="flex items-center gap-3">
-            
             <h1 className="text-xl font-semibold">Ranking Geral</h1>
           </div>
+
+          {/* Avatar do usuário */}
           <div className="flex flex-col items-center gap-1 cursor-pointer">
             <div className="w-10 h-10 rounded-full overflow-hidden bg-white/20 hover:bg-white/30 transition-colors">
               <img 
@@ -161,10 +64,22 @@ const RankingScreen = () => {
             <span className="text-xs text-blue-100 font-medium">Liana</span>
           </div>
         </div>
-        <div className="flex items-center justify-between">
+
+        {/* Logo centralizada */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 h-20 w-40 z-0">
+          <Image
+            src="/logo-superativo2.png"
+            alt="Logo Super Ativo"
+            width={256}
+            height={80}
+            className="h-full w-full object-fill drop-shadow-[0_10px_5px_rgba(255,165,0,0.95)]"
+          />
+        </div>
+
+        <div className="flex items-center justify-between relative z-10">
           <p className="text-blue-100">Competição entre todos os alunos da escola</p>
           <button 
-           onClick={() => window.location.href = '/'}
+            onClick={() => window.location.href = '/'}
             className="text-blue-100 text-sm hover:text-white hover:bg-white/10 px-3 py-1 rounded-full transition-all duration-200 border border-blue-200/30 hover:border-white/40"
           >
             Landing Page
@@ -235,7 +150,6 @@ const RankingScreen = () => {
           </h3>
           
           <div className="flex items-end justify-center gap-4 mb-6">
-            {/* 2º Lugar */}
             {filteredData[1] && (
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full flex items-center justify-center text-2xl mb-2">
@@ -249,7 +163,6 @@ const RankingScreen = () => {
               </div>
             )}
 
-            {/* 1º Lugar */}
             {filteredData[0] && (
               <div className="flex flex-col items-center">
                 <Crown size={24} className="text-yellow-500 mb-2" />
@@ -264,7 +177,6 @@ const RankingScreen = () => {
               </div>
             )}
 
-            {/* 3º Lugar */}
             {filteredData[2] && (
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-2xl mb-2">
@@ -283,20 +195,12 @@ const RankingScreen = () => {
         {/* Lista Completa */}
         <div className="bg-white rounded-2xl p-4 shadow-sm">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Classificação Completa</h3>
-          
           <div className="space-y-3">
-            {filteredData.map((aluno, index) => (
-              <div key={aluno.id} className={`p-4 rounded-lg border transition-all ${
-                aluno.posicao <= 3 
-                  ? 'border-yellow-200 bg-yellow-50' 
-                  : 'border-gray-200 bg-white hover:bg-gray-50'
-              }`}>
+            {filteredData.map((aluno) => (
+              <div key={aluno.id} className={`p-4 rounded-lg border transition-all ${aluno.posicao <= 3 ? 'border-yellow-200 bg-yellow-50' : 'border-gray-200 bg-white hover:bg-gray-50'}`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0">
-                      {getPodiumIcon(aluno.posicao)}
-                    </div>
-                    
+                    <div className="flex-shrink-0">{getPodiumIcon(aluno.posicao)}</div>
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-lg">
                         {aluno.avatar}
@@ -312,14 +216,12 @@ const RankingScreen = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="text-right">
                     <div className="text-xl font-bold text-blue-600">{aluno.pontos.total}</div>
                     <div className="text-xs text-gray-500">pontos totais</div>
                   </div>
                 </div>
 
-                {/* Detalhamento dos Pontos */}
                 <div className="mt-3 pt-3 border-t border-gray-100">
                   <div className="grid grid-cols-3 gap-4 text-sm">
                     <div className="text-center">
@@ -393,7 +295,6 @@ const RankingScreen = () => {
         </div>
       </div>
 
-      {/* Spacing for bottom navigation */}
       <div className="h-20"></div>
     </div>
   );
