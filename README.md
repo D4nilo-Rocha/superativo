@@ -86,7 +86,7 @@ superativo/             # raiz do projeto
 
 # 1. Clone o repositório
 ```bash
-git clone 
+git clone https://github.com/D4nilo-Rocha/superativo.git
 ```
 # 2. Acesse a pasta do projeto
 ```bash
